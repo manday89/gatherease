@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:gatherease/homepage.dart';
+import 'package:gatherease/pesan/pesan_page.dart';
 
 class DetailPage extends StatelessWidget {
   final int itemIndex;
 
-  const DetailPage({super.key, required this.itemIndex});
+  const DetailPage({Key? key, required this.itemIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detail Page'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Detail Page',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -17,9 +29,9 @@ class DetailPage extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.network(
-                  'https://via.placeholder.com/600x200', // Replace with actual image URL
-                  fit: BoxFit.cover,
+                Image.asset(
+                  'assets/places2.png',
+                  fit: BoxFit.fitWidth,
                   width: double.infinity,
                   height: 200,
                 ),
@@ -46,19 +58,26 @@ class DetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Balai Serba Guna',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Rp2.000.000 / days',
-                    style: TextStyle(fontSize: 20, color: Colors.green),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Balai Serba Guna',
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        'Rp2.000.000 / days',
+                        style:
+                            TextStyle(fontSize: 13, color: Color(0xFF52796F)),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 8),
                   const Row(
                     children: [
-                      Icon(Icons.location_pin, color: Colors.green),
+                      Icon(Icons.location_pin, color: Color(0xFF52796F)),
                       SizedBox(width: 4),
                       Flexible(
                         child: Text('Kecamatan Kaliwates, Jember'),
@@ -85,22 +104,22 @@ class DetailPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                        child: Image.network(
-                          'assets/sg/preview1.png', 
+                        child: Image.asset(
+                          'assets/sg/preview1.png',
                           fit: BoxFit.cover,
                         ),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
-                        child: Image.network(
-                          'assets/sg/preview2.png', 
+                        child: Image.asset(
+                          'assets/sg/preview2.png',
                           fit: BoxFit.cover,
                         ),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
-                        child: Image.network(
-                          'assets/sg/preview3.png', 
+                        child: Image.asset(
+                          'assets/sg/preview3.png',
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -111,13 +130,23 @@ class DetailPage extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Implement booking action
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return PaymentPage();
+                          }),
+                        );
                       },
-                      child: const Text('Booking Sekarang'),
+                      child: const Text(
+                        'Booking Sekarang',
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
+                        backgroundColor: Color(0xFF52796F),
                         padding: const EdgeInsets.symmetric(vertical: 16),
-                        textStyle: const TextStyle(fontSize: 18),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
                       ),
                     ),
                   ),

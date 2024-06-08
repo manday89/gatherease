@@ -18,11 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: const SplashScreen(),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const MainPage(),
         '/booking': (context) => const MainPage(),
         '/history': (context) => const MainPage(),
+        '/backhome': (context) => const MainPage(),
       },
     );
   }
