@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gatherease/pesan/detail.dart';
 import 'package:gatherease/pesan/payment.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'detail.dart';
 
 class PaymentPage extends StatefulWidget {
-  const PaymentPage(({Key? key, required this.itemIndex}) : super(key: key);)
-  
+  final int itemIndex;
+
+  const PaymentPage({Key? key, required this.itemIndex}) : super(key: key);
+
   @override
   _PaymentPageState createState() => _PaymentPageState();
 }
@@ -30,8 +32,10 @@ class _PaymentPageState extends State<PaymentPage> {
             );
           },
         ),
-        title: const Text('Pembayaran',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        title: const Text(
+          'Pembayaran',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,

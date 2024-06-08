@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gatherease/homepage.dart';
-import 'package:gatherease/pesan/detail.dart';
 
 class PaymentCompletePage extends StatelessWidget {
   @override

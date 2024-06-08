@@ -14,7 +14,10 @@ class DetailPage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
           },
         ),
         title: const Text(
@@ -133,7 +136,9 @@ class DetailPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return PaymentPage();
+                            return const PaymentPage(
+                              itemIndex: 0,
+                            );
                           }),
                         );
                       },
