@@ -49,38 +49,6 @@ class RegistrationPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            'Username',
-                            style: TextStyle(fontSize: 18, color: Colors.black),
-                          ),
-                          const SizedBox(height: 2),
-                          Container(
-                            width: double.infinity,
-                            height: 51,
-                            decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                side: const BorderSide(
-                                    width: 2, color: Color(0xFF818181)),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            child: const TextField(
-                              autofocus: true,
-                              decoration: InputDecoration(
-                                hintText: 'Enter your Username',
-                                border: InputBorder.none,
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 15),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
                             'Email',
                             style: TextStyle(fontSize: 18, color: Colors.black),
                           ),
@@ -140,7 +108,7 @@ class RegistrationPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      /*const SizedBox(height: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -171,7 +139,7 @@ class RegistrationPage extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),
+                      ),*/
                       const SizedBox(height: 20),
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 300),

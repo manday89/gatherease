@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Username', style: TextStyle(fontSize: 18)),
+        const Text('Email', style: TextStyle(fontSize: 18)),
         const SizedBox(height: 2),
         Container(
           width: double.infinity,
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
           child: const TextField(
             autofocus: true,
             decoration: InputDecoration(
-              hintText: 'Enter your Username',
+              hintText: 'Enter your Email',
               border: InputBorder.none,
               contentPadding: EdgeInsets.symmetric(horizontal: 15),
             ),
